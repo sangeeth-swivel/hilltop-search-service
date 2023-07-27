@@ -30,8 +30,7 @@ public class SearchService {
     public List<String> getHotelsIdByCity(String city) {
         try {
             String trimCity = city.trim();
-//            String getHotelIdUrl = "http://3.84.168.202:8083/hotel-service/api/v1/hotel/city/%s";
-            String getHotelIdUrl = "http://localhost:5002/hilltop-hotel-service/api/v1/hotel/city/%s";
+            String getHotelIdUrl = "http://hilltop-hotel-service.eu-north-1.elasticbeanstalk.com/hilltop-hotel-service/api/v1/hotel/city/%s";
             String formattedURL = String.format(getHotelIdUrl, trimCity);
             ResponseEntity<HotelListResponseWrapper> result =
                     restTemplate.exchange(formattedURL, HttpMethod.GET, null, HotelListResponseWrapper.class);
@@ -45,8 +44,7 @@ public class SearchService {
 
         try {
             String hotelIdsUrlPrefix = creteHotelIdsUrlPrefix(hotelIds);
-//            String getRoomsUrl = "http://3.90.84.171:8084/room-service/api/v1/room/list-hotel-room-by?count=" + paxCount + "&days=" + dayCount + hotelIdsUrlPrefix;
-            String getRoomsUrl = "http://localhost:5002/hilltop-hotel-service/api/v1/room/list-hotel-room-by?count=" + paxCount + "&days=" + dayCount + hotelIdsUrlPrefix;
+            String getRoomsUrl = "http://hilltop-hotel-service.eu-north-1.elasticbeanstalk.com/hilltop-hotel-service/api/v1/room/list-hotel-room-by?count=" + paxCount + "&days=" + dayCount + hotelIdsUrlPrefix;
             ResponseEntity<RoomListResponseWrapper> result =
                     restTemplate.exchange(getRoomsUrl, HttpMethod.GET, null, RoomListResponseWrapper.class);
             SearchRoomListResponseDto data = Objects.requireNonNull(result.getBody()).getData();
