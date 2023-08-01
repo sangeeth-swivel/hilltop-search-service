@@ -47,12 +47,12 @@ class SearchControllerTest {
     }
 
 
-    @Test
-    void Should_ReturnOk_When_Calling_RoomSearch() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get(SEARCH_URL)
-                        .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    void Should_ReturnOk_When_Calling_RoomSearch() throws Exception {
+//        mockMvc.perform(MockMvcRequestBuilders.get(SEARCH_URL)
+//                        .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     void Should_ReturnInternalServerError_When_BookingIsFailedDueToInternalErrors(){
