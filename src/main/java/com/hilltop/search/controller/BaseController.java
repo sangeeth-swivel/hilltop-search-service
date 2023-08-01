@@ -35,7 +35,7 @@ public class BaseController {
         return new ResponseEntity<>(responseWrapper, HttpStatus.BAD_REQUEST);
     }
 
-    protected ResponseEntity<ResponseWrapper> getInternalServerError() {
+    public ResponseEntity<ResponseWrapper> getInternalServerError() {
         ResponseWrapper responseWrapper = new ResponseWrapper(ErrorMessage.INTERNAL_SERVER_ERROR.getMessage());
         return new ResponseEntity<>(responseWrapper, HttpStatus.INTERNAL_SERVER_ERROR);
     }

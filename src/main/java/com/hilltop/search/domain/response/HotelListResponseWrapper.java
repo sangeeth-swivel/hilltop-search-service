@@ -1,6 +1,6 @@
 package com.hilltop.search.domain.response;
 
-import com.hilltop.search.enums.SuccessMessage;
+import com.hilltop.search.enums.ResponseStatusType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class HotelListResponseWrapper implements ResponseDto {
-    private SuccessMessage status;
+    private ResponseStatusType status;
     private String message;
     private HotelListResponseDto data;
     private String displayMessage;
